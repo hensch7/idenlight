@@ -1,0 +1,14 @@
+{
+    "frontend_url": "https://demo.id-ideal.de",
+    "acapy_api": "https://demo.id-ideal.de/acapyapi/",
+    "acapy_service_endpoint": "https://demo.id-ideal.de/acapyse/",
+    "webhook_service": "wss://demo.id-ideal.de/ws/",
+    "credential": {
+        "credentialDefinitionID": "CzrQJjwXxFNitzCuiWAWT2:3:CL:102506:Hochschulabschlusszeugnis",
+        "credentialSchemaID": "PLEVLDPJQMJvPLyX3LgB6S:2:Abschlusszeugnis:1.0",
+        "schemaIssuerDID": "PLEVLDPJQMJvPLyX3LgB6S",
+        "issuerDID": "CzrQJjwXxFNitzCuiWAWT2",
+        "verkey": "7YGFFq7WXNMsEr82fP8WsQkecZWLATL6z9Lpy8dD1K1r",
+        "schemaName": "Abschlusszeugnis"
+    }
+}
