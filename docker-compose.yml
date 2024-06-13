@@ -48,6 +48,16 @@ services:
     networks:
       - acapy-network
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80" # Example port mapping, adjust as needed
+    networks:
+      - acapy-network
+    volumes:
+      - ./nginx.conf:/etc/nginx/demo.id-ideal.de.conf:ro # Mount your Nginx configuration file
+
 networks:
   acapy-network:
     driver: bridge
