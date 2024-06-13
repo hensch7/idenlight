@@ -10,7 +10,7 @@ IDEnlight is a sofware to learn the concept of Self-Sovereign Identity. It acts 
 
 This application can be served as a multi container application. See figure below.
 
-![Alt architecture](/public/Architecture.png?raw=true "Title")
+![Alt architecture](frontend/public/Architecture.png?raw=true "Title")
 
 The following containers are **required**:
 
