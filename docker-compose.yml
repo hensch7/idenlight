@@ -32,9 +32,9 @@ services:
     networks:
       - acapy-network
 
-  webhook_service:
+  webhook:
     build: ./webhook_service
-    container_name: webhook_service
+    container_name: webhook
     ports:
       - "5001:5001"
     networks:
