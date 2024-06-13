@@ -50,6 +50,8 @@ GENESIS_URL=http://test.bcovrin.vonx.io/genesis ./docker/manage start
 1. Clone this repository
 ```sh
 git clone https://github.com/bieleric/idenlight.git
+or
+git clone https://github.com/hensch7/idenlight.git
 ```
 
 2. Navigate to the folder _webhook_service_ 
@@ -59,12 +61,12 @@ cd webhook_service
 
 3. Build the container  
 ```sh
-docker build -t idenlight/webhook_service
+docker build -t webhook_service .
 ```
 
 4. Run the container  
 ```sh
-docker run --name=idenlight_webhook_service -p 5001:5001 -d idenlight/webhook_service
+docker run --name=webhook_service -p 5001:5001 -d webhook_service
 ```
 
 ### Deploy IDEnlight Frontend
@@ -76,6 +78,7 @@ cd frontend
 2. Create a config.json with the following key values pairs. You probably have to change the ports if you expose the containers on others.
 ```json
 {
+    "frontend_url": "https://demo.id-ideal.de",
     "acapy_api": "http://<host_name>:11000",
     "acapy_service_endpoint": "http://<host_name>:8000",
     "webhook_service": "ws://<host_name>:5001",
@@ -92,12 +95,12 @@ cd frontend
 
 3. Build the container  
 ```sh
-docker build -t idenlight/frontend
+docker build -t frontend .
 ```
 
 4. Run the container  
 ```sh
-docker run --detach --name=idenlight_frontend -p <host_name>:8080:8080 idenlight/frontend
+docker run --detach --name=frontend -p <host_name>:8080:8080 frontend
 ```
 
 _After deployment there could be an error due to the storage that is not used as mentioned above. Therefore you probably need to create a new credentials definition (and optionally save it in a database if you want to reuse it after a restart of ACA-Py) and add it to the config.json_
