@@ -5,9 +5,9 @@ services:
     image: bcgovimages/aries-cloudagent:py3.9-indy-1.16.0_0.9.0
     container_name: acapy
     ports:
-      - "11000:11000"
-      - "8000:8000"
-    command: start --label idenlight --tails-server-base-url http://demo.id-ideal.de/tails/ --webhook-url http://35.241.208.6:5001/webhooks -it http 0.0.0.0 8000 -ot http --admin 0.0.0.0 11000 --admin-insecure-mode --genesis-url http://test.bcovrin.vonx.io/genesis --seed HTWDresden0000000000000000000001 --endpoint http://35.241.208.6:8000 --debug-connections --auto-provision --wallet-type askar --wallet-name idenlight --wallet-key secret --auto-accept-invites --auto-accept-requests --log-level info
+      - 11000:11000
+      - 35.241.208.6:8000:8000
+    command: start --label idenlight --tails-server-base-url http://demo.id-ideal.de/tails/ --webhook-url http://35.241.208.6:5001/webhooks -it http 0.0.0.0 8000 -ot http --admin 0.0.0.0 11000 --admin-insecure-mode --genesis-url http://test.bcovrin.vonx.io/genesis --seed HTWDresden0000000000000000000001 --endpoint http://35.241.208.6:8000/ --debug-connections --auto-provision --wallet-type askar --wallet-name idenlight --wallet-key secret --auto-accept-invites --auto-accept-requests --log-level info
 
     networks:
       - web
@@ -16,7 +16,7 @@ services:
     build: ./webhook_service
     container_name: webhook
     ports:
-      - "5001:5001"
+      - 5001:5001
     networks:
       - web
 
@@ -24,7 +24,7 @@ services:
     build: ./frontend
     container_name: frontend
     ports:
-      - "8080:8080"
+      - 8080:8080
     networks:
       - web
 
