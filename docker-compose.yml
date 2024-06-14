@@ -7,7 +7,7 @@ services:
     ports:
       - "11000:11000"
       - "8000:8000"
-    command: start --label idenlight --tails-server-base-url http://demo.id-ideal.de/tails/ --webhook-url http://demo.id-ideal.de/ws/webhooks -it http 0.0.0.0 8000 -ot http --admin 0.0.0.0 11000 --admin-insecure-mode --genesis-url http://test.bcovrin.vonx.io/genesis --seed HTWDresden0000000000000000000001 --endpoint http://demo.id-ideal.de/acapyse/ --debug-connections --auto-provision --wallet-type askar --wallet-name idenlight --wallet-key secret --auto-accept-invites --auto-accept-requests --log-level info
+    command: start --label idenlight --tails-server-base-url http://demo.id-ideal.de/tails/ --webhook-url http://35.241.208.6:5001/webhooks -it http 0.0.0.0 8000 -ot http --admin 0.0.0.0 11000 --admin-insecure-mode --genesis-url http://test.bcovrin.vonx.io/genesis --seed HTWDresden0000000000000000000001 --endpoint http://35.241.208.6:8000 --debug-connections --auto-provision --wallet-type askar --wallet-name idenlight --wallet-key secret --auto-accept-invites --auto-accept-requests --log-level info
 
     networks:
       - web
@@ -25,24 +25,6 @@ services:
     container_name: frontend
     ports:
       - "8080:8080"
-    networks:
-      - web
-
-  traefik:
-    image: traefik:v2.6
-    command:
-      # Experimentell, um das Dashboard ohne Zugriffsschutz aufzurufen
-      #- "--api.insecure=true"
-      - "--providers.docker"
-      - "--providers.docker.exposedByDefault=true"
-      - "--providers.docker.network=traefik_web"
-      - "--entrypoints.http.address=:80"
-    ports:
-      - "80:80"
-      - "443:443"
-      - "8080:8080"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - web
 

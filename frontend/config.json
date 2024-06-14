@@ -1,8 +1,8 @@
 {
-    "frontend_url": "https://demo.id-ideal.de",
-    "acapy_api": "https://demo.id-ideal.de/acapyapi/",
-    "acapy_service_endpoint": "https://demo.id-ideal.de/acapyse/",
-    "webhook_service": "wss://demo.id-ideal.de/ws/",
+    "frontend_url": "http://35.241.208.6:8080",
+    "acapy_api": "http://35.241.208.6:11000",
+    "acapy_service_endpoint": "http://35.241.208.6:8000",
+    "webhook_service": "ws://35.241.208.6:5001",
     "credential": {
         "credentialDefinitionID": "CzrQJjwXxFNitzCuiWAWT2:3:CL:102506:Hochschulabschlusszeugnis",
         "credentialSchemaID": "PLEVLDPJQMJvPLyX3LgB6S:2:Abschlusszeugnis:1.0",
